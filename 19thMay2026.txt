@@ -1,0 +1,74 @@
+use vitcampus;
+
+select * from worker;
+
+select first_name,department,salary from worker
+where department='admin' or salary >= 100000;
+
+select worker_id,first_name,department,salary from worker
+where worker_id not in (1,6,7);
+
+select * from worker 
+where salary not between 110000 and 300000;
+
+select * from worker
+where salary between 110000 and 300000
+and department not in ('hr','admin');
+
+select * from worker where first_name Like '_i%';
+
+select * from worker where first_name Like 'V%e_';
+
+select * from worker where first_name Like '_i__%';
+
+select * from worker where first_name Like '_i__a%';
+select * from worker
+where salary between 110000 and 300000
+and department not in ('hr','admin');
+
+select * from worker where first_name Like '_i%';
+
+select * from worker where first_name Like 'V%e_';
+
+select * from worker where first_name Like '_i__%';
+
+select max(salary) from worker where department='HR';
+
+select count(worker_id) from worker where department='admin';
+
+select sum(salary) from worker where department='admin';
+
+select avg(salary) from worker where department='admin';
+
+select min(salary) from worker where department='admin'
+and first_name not like '%a%';
+
+select * from worker 
+where department = 'admin'
+and first_name not like '%a%'
+and salary = (select MIN(salary) from worker where department = 'admin');
+
+select salary from worker
+UNION
+select salary from worker;
+
+select worker_id as RollNumber from worker;
+
+select distinct(department) from worker;
+
+select worker_id, first_name,
+case
+    when salary > 300000 then 'Rich people'
+    when salary >= 100000 and salary < 299999 then 'Middle'
+    else 'Poor'
+end
+as status
+from worker;
+
+select min(salary) from worker where department='admin';
+
+create view minSalaryAdmin as select min(salary) from worker where department='admin';
+
+create view maxSalaryAdmin as select max(salary) from worker where department='admin';
+
+select * from maxSalaryAdmin;
