@@ -1,0 +1,2737 @@
+{\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 db.movies.insertMany([\par
+\{\par
+    "_id": 1,\par
+    "title": "Pirates of Silicon Valley",\par
+    "year": 1999,\par
+    "genre": "Drama",\par
+    "director": "Martyn Burke"\par
+\},\par
+\{\par
+    "_id": 2,\par
+    "title": "The Social Network",\par
+    "year": 2010,\par
+    "genre": "Biography",\par
+    "director": "David Fincher"\par
+\},\par
+\{\par
+    "_id": 3,\par
+    "title": "Steve Jobs",\par
+    "year": 2015,\par
+    "genre": "Biography",\par
+    "director": "Danny Boyle"\par
+\},\par
+\{\par
+    "_id": 4,\par
+    "title": "The Imitation Game",\par
+    "year": 2014,\par
+    "genre": "Drama",\par
+    "director": "Morten Tyldum"\par
+\},\par
+\{\par
+    "_id": 5,\par
+    "title": "Hackers",\par
+    "year": 1995,\par
+    "genre": "Crime",\par
+    "director": "Iain Softley"\par
+\},\par
+\{\par
+    "_id": 6,\par
+    "title": "Jobs",\par
+    "year": 2013,\par
+    "genre": "Biography",\par
+    "director": "Joshua Michael Stern"\par
+\},\par
+\{\par
+    "_id": 7,\par
+    "title": "The Matrix",\par
+    "year": 1999,\par
+    "genre": "Sci-Fi",\par
+    "director": "The Wachowskis"\par
+\},\par
+\{\par
+    "_id": 8,\par
+    "title": "Inception",\par
+    "year": 2010,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 9,\par
+    "title": "Interstellar",\par
+    "year": 2014,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 10,\par
+    "title": "Avatar",\par
+    "year": 2009,\par
+    "genre": "Sci-Fi",\par
+    "director": "James Cameron"\par
+\}\par
+]);\par
+\{\par
+  acknowledged: true,\par
+  insertedIds: \{\par
+    '0': 1,\par
+    '1': 2,\par
+    '2': 3,\par
+    '3': 4,\par
+    '4': 5,\par
+    '5': 6,\par
+    '6': 7,\par
+    '7': 8,\par
+    '8': 9,\par
+    '9': 10\par
+  \}\par
+\}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\}).explain('executionStats')\par
+        '$eq': 'Pirates of Silicon Valley'\par
+    planCacheKey: '553F28EB',\par
+    optimizationTimeMillis: 10,\par
+    maxIndexedOrSolutionsReached: false,\par
+    maxIndexedAndSolutionsReached: false,\par
+    maxScansToExplodeReached: false,\par
+    winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      direction: 'forward'\par
+    \},\par
+    rejectedPlans: []\par
+  \},\par
+  executionStats: \{\par
+    executionSuccess: true,\par
+    nReturned: 1,\par
+    executionTimeMillis: 16,\par
+    totalKeysExamined: 0,\par
+    totalDocsExamined: 10,\par
+    executionStages: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      nReturned: 1,\par
+      executionTimeMillisEstimate: 0,\par
+      works: 11,\par
+      advanced: 1,\par
+      needTime: 9,\par
+      needYield: 0,\par
+      saveState: 0,\par
+      restoreState: 0,\par
+      isEOF: 1,\par
+      direction: 'forward',\par
+      docsExamined: 10\par
+    \}\par
+  \},\par
+  command: \{\par
+    find: 'movies',\par
+    filter: \{\par
+      title: 'Pirates of Silicon Valley'\par
+    \},\par
+    '$db': 'Vitcampus'\par
+  \},\par
+  serverInfo: \{\par
+    host: 'DESKTOP-1MV4J90',\par
+    port: 27017,\par
+    version: '7.0.32',\par
+    gitVersion: '40a2e0f542b0a68f0ed51fa216e9d38b9917fe14'\par
+  \},\par
+  serverParameters: \{\par
+    internalQueryFacetBufferSizeBytes: 104857600,\par
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,\par
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,\par
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,\par
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,\par
+    internalQueryProhibitBlockingMergeOnMongoS: 0,\par
+    internalQueryMaxAddToSetBytes: 104857600,\par
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,\par
+    internalQueryFrameworkControl: 'forceClassicEngine'\par
+  \},\par
+  ok: 1\par
+\}\par
+db.movies.createIndex(\{title:1\})\par
+title_1\par
+db.movies.getIndexes()\par
+[\par
+  \{ v: 2, key: \{ _id: 1 \}, name: '_id_' \},\par
+  \{ v: 2, key: \{ title: 1 \}, name: 'title_1' \}\par
+]\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley\par
+\})\par
+SyntaxError: Unterminated string constant. (2:10)\par
+\par
+  1 | db.movies.find(\{\par
+> 2 |    title: 'Pirates of Silicon Valley\par
+    |           ^\par
+  3 | \})\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})\par
+\{\par
+  _id: 1,\par
+  title: 'Pirates of Silicon Valley',\par
+  year: 1999,\par
+  genre: 'Drama',\par
+  director: 'Martyn Burke'\par
+\}\par
+winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+      direction: 'forward'\par
+    \}\par
+SyntaxError: Missing semicolon. (3:12)\par
+\par
+  1 | winningPlan: \{\par
+  2 |       stage: 'COLLSCAN',\par
+> 3 |       filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+    |             ^\par
+  4 |       direction: 'forward'\par
+  5 |     \}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})db.movies.insertMany([\par
+\{\par
+    "_id": 1,\par
+    "title": "Pirates of Silicon Valley",\par
+    "year": 1999,\par
+    "genre": "Drama",\par
+    "director": "Martyn Burke"\par
+\},\par
+\{\par
+    "_id": 2,\par
+    "title": "The Social Network",\par
+    "year": 2010,\par
+    "genre": "Biography",\par
+    "director": "David Fincher"\par
+\},\par
+\{\par
+    "_id": 3,\par
+    "title": "Steve Jobs",\par
+    "year": 2015,\par
+    "genre": "Biography",\par
+    "director": "Danny Boyle"\par
+\},\par
+\{\par
+    "_id": 4,\par
+    "title": "The Imitation Game",\par
+    "year": 2014,\par
+    "genre": "Drama",\par
+    "director": "Morten Tyldum"\par
+\},\par
+\{\par
+    "_id": 5,\par
+    "title": "Hackers",\par
+    "year": 1995,\par
+    "genre": "Crime",\par
+    "director": "Iain Softley"\par
+\},\par
+\{\par
+    "_id": 6,\par
+    "title": "Jobs",\par
+    "year": 2013,\par
+    "genre": "Biography",\par
+    "director": "Joshua Michael Stern"\par
+\},\par
+\{\par
+    "_id": 7,\par
+    "title": "The Matrix",\par
+    "year": 1999,\par
+    "genre": "Sci-Fi",\par
+    "director": "The Wachowskis"\par
+\},\par
+\{\par
+    "_id": 8,\par
+    "title": "Inception",\par
+    "year": 2010,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 9,\par
+    "title": "Interstellar",\par
+    "year": 2014,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 10,\par
+    "title": "Avatar",\par
+    "year": 2009,\par
+    "genre": "Sci-Fi",\par
+    "director": "James Cameron"\par
+\}\par
+]);\par
+\{\par
+  acknowledged: true,\par
+  insertedIds: \{\par
+    '0': 1,\par
+    '1': 2,\par
+    '2': 3,\par
+    '3': 4,\par
+    '4': 5,\par
+    '5': 6,\par
+    '6': 7,\par
+    '7': 8,\par
+    '8': 9,\par
+    '9': 10\par
+  \}\par
+\}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\}).explain('executionStats')\par
+        '$eq': 'Pirates of Silicon Valley'\par
+    planCacheKey: '553F28EB',\par
+    optimizationTimeMillis: 10,\par
+    maxIndexedOrSolutionsReached: false,\par
+    maxIndexedAndSolutionsReached: false,\par
+    maxScansToExplodeReached: false,\par
+    winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      direction: 'forward'\par
+    \},\par
+    rejectedPlans: []\par
+  \},\par
+  executionStats: \{\par
+    executionSuccess: true,\par
+    nReturned: 1,\par
+    executionTimeMillis: 16,\par
+    totalKeysExamined: 0,\par
+    totalDocsExamined: 10,\par
+    executionStages: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      nReturned: 1,\par
+      executionTimeMillisEstimate: 0,\par
+      works: 11,\par
+      advanced: 1,\par
+      needTime: 9,\par
+      needYield: 0,\par
+      saveState: 0,\par
+      restoreState: 0,\par
+      isEOF: 1,\par
+      direction: 'forward',\par
+      docsExamined: 10\par
+    \}\par
+  \},\par
+  command: \{\par
+    find: 'movies',\par
+    filter: \{\par
+      title: 'Pirates of Silicon Valley'\par
+    \},\par
+    '$db': 'Vitcampus'\par
+  \},\par
+  serverInfo: \{\par
+    host: 'DESKTOP-1MV4J90',\par
+    port: 27017,\par
+    version: '7.0.32',\par
+    gitVersion: '40a2e0f542b0a68f0ed51fa216e9d38b9917fe14'\par
+  \},\par
+  serverParameters: \{\par
+    internalQueryFacetBufferSizeBytes: 104857600,\par
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,\par
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,\par
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,\par
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,\par
+    internalQueryProhibitBlockingMergeOnMongoS: 0,\par
+    internalQueryMaxAddToSetBytes: 104857600,\par
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,\par
+    internalQueryFrameworkControl: 'forceClassicEngine'\par
+  \},\par
+  ok: 1\par
+\}\par
+db.movies.createIndex(\{title:1\})\par
+title_1\par
+db.movies.getIndexes()\par
+[\par
+  \{ v: 2, key: \{ _id: 1 \}, name: '_id_' \},\par
+  \{ v: 2, key: \{ title: 1 \}, name: 'title_1' \}\par
+]\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley\par
+\})\par
+SyntaxError: Unterminated string constant. (2:10)\par
+\par
+  1 | db.movies.find(\{\par
+> 2 |    title: 'Pirates of Silicon Valley\par
+    |           ^\par
+  3 | \})\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})\par
+\{\par
+  _id: 1,\par
+  title: 'Pirates of Silicon Valley',\par
+  year: 1999,\par
+  genre: 'Drama',\par
+  director: 'Martyn Burke'\par
+\}\par
+winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+      direction: 'forward'\par
+    \}\par
+SyntaxError: Missing semicolon. (3:12)\par
+\par
+  1 | winningPlan: \{\par
+  2 |       stage: 'COLLSCAN',\par
+> 3 |       filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+    |             ^\par
+  4 |       direction: 'forward'\par
+  5 |     \}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})db.movies.insertMany([\par
+\{\par
+    "_id": 1,\par
+    "title": "Pirates of Silicon Valley",\par
+    "year": 1999,\par
+    "genre": "Drama",\par
+    "director": "Martyn Burke"\par
+\},\par
+\{\par
+    "_id": 2,\par
+    "title": "The Social Network",\par
+    "year": 2010,\par
+    "genre": "Biography",\par
+    "director": "David Fincher"\par
+\},\par
+\{\par
+    "_id": 3,\par
+    "title": "Steve Jobs",\par
+    "year": 2015,\par
+    "genre": "Biography",\par
+    "director": "Danny Boyle"\par
+\},\par
+\{\par
+    "_id": 4,\par
+    "title": "The Imitation Game",\par
+    "year": 2014,\par
+    "genre": "Drama",\par
+    "director": "Morten Tyldum"\par
+\},\par
+\{\par
+    "_id": 5,\par
+    "title": "Hackers",\par
+    "year": 1995,\par
+    "genre": "Crime",\par
+    "director": "Iain Softley"\par
+\},\par
+\{\par
+    "_id": 6,\par
+    "title": "Jobs",\par
+    "year": 2013,\par
+    "genre": "Biography",\par
+    "director": "Joshua Michael Stern"\par
+\},\par
+\{\par
+    "_id": 7,\par
+    "title": "The Matrix",\par
+    "year": 1999,\par
+    "genre": "Sci-Fi",\par
+    "director": "The Wachowskis"\par
+\},\par
+\{\par
+    "_id": 8,\par
+    "title": "Inception",\par
+    "year": 2010,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 9,\par
+    "title": "Interstellar",\par
+    "year": 2014,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 10,\par
+    "title": "Avatar",\par
+    "year": 2009,\par
+    "genre": "Sci-Fi",\par
+    "director": "James Cameron"\par
+\}\par
+]);\par
+\{\par
+  acknowledged: true,\par
+  insertedIds: \{\par
+    '0': 1,\par
+    '1': 2,\par
+    '2': 3,\par
+    '3': 4,\par
+    '4': 5,\par
+    '5': 6,\par
+    '6': 7,\par
+    '7': 8,\par
+    '8': 9,\par
+    '9': 10\par
+  \}\par
+\}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\}).explain('executionStats')\par
+        '$eq': 'Pirates of Silicon Valley'\par
+    planCacheKey: '553F28EB',\par
+    optimizationTimeMillis: 10,\par
+    maxIndexedOrSolutionsReached: false,\par
+    maxIndexedAndSolutionsReached: false,\par
+    maxScansToExplodeReached: false,\par
+    winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      direction: 'forward'\par
+    \},\par
+    rejectedPlans: []\par
+  \},\par
+  executionStats: \{\par
+    executionSuccess: true,\par
+    nReturned: 1,\par
+    executionTimeMillis: 16,\par
+    totalKeysExamined: 0,\par
+    totalDocsExamined: 10,\par
+    executionStages: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      nReturned: 1,\par
+      executionTimeMillisEstimate: 0,\par
+      works: 11,\par
+      advanced: 1,\par
+      needTime: 9,\par
+      needYield: 0,\par
+      saveState: 0,\par
+      restoreState: 0,\par
+      isEOF: 1,\par
+      direction: 'forward',\par
+      docsExamined: 10\par
+    \}\par
+  \},\par
+  command: \{\par
+    find: 'movies',\par
+    filter: \{\par
+      title: 'Pirates of Silicon Valley'\par
+    \},\par
+    '$db': 'Vitcampus'\par
+  \},\par
+  serverInfo: \{\par
+    host: 'DESKTOP-1MV4J90',\par
+    port: 27017,\par
+    version: '7.0.32',\par
+    gitVersion: '40a2e0f542b0a68f0ed51fa216e9d38b9917fe14'\par
+  \},\par
+  serverParameters: \{\par
+    internalQueryFacetBufferSizeBytes: 104857600,\par
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,\par
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,\par
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,\par
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,\par
+    internalQueryProhibitBlockingMergeOnMongoS: 0,\par
+    internalQueryMaxAddToSetBytes: 104857600,\par
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,\par
+    internalQueryFrameworkControl: 'forceClassicEngine'\par
+  \},\par
+  ok: 1\par
+\}\par
+db.movies.createIndex(\{title:1\})\par
+title_1\par
+db.movies.getIndexes()\par
+[\par
+  \{ v: 2, key: \{ _id: 1 \}, name: '_id_' \},\par
+  \{ v: 2, key: \{ title: 1 \}, name: 'title_1' \}\par
+]\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley\par
+\})\par
+SyntaxError: Unterminated string constant. (2:10)\par
+\par
+  1 | db.movies.find(\{\par
+> 2 |    title: 'Pirates of Silicon Valley\par
+    |           ^\par
+  3 | \})\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})\par
+\{\par
+  _id: 1,\par
+  title: 'Pirates of Silicon Valley',\par
+  year: 1999,\par
+  genre: 'Drama',\par
+  director: 'Martyn Burke'\par
+\}\par
+winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+      direction: 'forward'\par
+    \}\par
+SyntaxError: Missing semicolon. (3:12)\par
+\par
+  1 | winningPlan: \{\par
+  2 |       stage: 'COLLSCAN',\par
+> 3 |       filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+    |             ^\par
+  4 |       direction: 'forward'\par
+  5 |     \}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})db.movies.insertMany([\par
+\{\par
+    "_id": 1,\par
+    "title": "Pirates of Silicon Valley",\par
+    "year": 1999,\par
+    "genre": "Drama",\par
+    "director": "Martyn Burke"\par
+\},\par
+\{\par
+    "_id": 2,\par
+    "title": "The Social Network",\par
+    "year": 2010,\par
+    "genre": "Biography",\par
+    "director": "David Fincher"\par
+\},\par
+\{\par
+    "_id": 3,\par
+    "title": "Steve Jobs",\par
+    "year": 2015,\par
+    "genre": "Biography",\par
+    "director": "Danny Boyle"\par
+\},\par
+\{\par
+    "_id": 4,\par
+    "title": "The Imitation Game",\par
+    "year": 2014,\par
+    "genre": "Drama",\par
+    "director": "Morten Tyldum"\par
+\},\par
+\{\par
+    "_id": 5,\par
+    "title": "Hackers",\par
+    "year": 1995,\par
+    "genre": "Crime",\par
+    "director": "Iain Softley"\par
+\},\par
+\{\par
+    "_id": 6,\par
+    "title": "Jobs",\par
+    "year": 2013,\par
+    "genre": "Biography",\par
+    "director": "Joshua Michael Stern"\par
+\},\par
+\{\par
+    "_id": 7,\par
+    "title": "The Matrix",\par
+    "year": 1999,\par
+    "genre": "Sci-Fi",\par
+    "director": "The Wachowskis"\par
+\},\par
+\{\par
+    "_id": 8,\par
+    "title": "Inception",\par
+    "year": 2010,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 9,\par
+    "title": "Interstellar",\par
+    "year": 2014,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 10,\par
+    "title": "Avatar",\par
+    "year": 2009,\par
+    "genre": "Sci-Fi",\par
+    "director": "James Cameron"\par
+\}\par
+]);\par
+\{\par
+  acknowledged: true,\par
+  insertedIds: \{\par
+    '0': 1,\par
+    '1': 2,\par
+    '2': 3,\par
+    '3': 4,\par
+    '4': 5,\par
+    '5': 6,\par
+    '6': 7,\par
+    '7': 8,\par
+    '8': 9,\par
+    '9': 10\par
+  \}\par
+\}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\}).explain('executionStats')\par
+        '$eq': 'Pirates of Silicon Valley'\par
+    planCacheKey: '553F28EB',\par
+    optimizationTimeMillis: 10,\par
+    maxIndexedOrSolutionsReached: false,\par
+    maxIndexedAndSolutionsReached: false,\par
+    maxScansToExplodeReached: false,\par
+    winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      direction: 'forward'\par
+    \},\par
+    rejectedPlans: []\par
+  \},\par
+  executionStats: \{\par
+    executionSuccess: true,\par
+    nReturned: 1,\par
+    executionTimeMillis: 16,\par
+    totalKeysExamined: 0,\par
+    totalDocsExamined: 10,\par
+    executionStages: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      nReturned: 1,\par
+      executionTimeMillisEstimate: 0,\par
+      works: 11,\par
+      advanced: 1,\par
+      needTime: 9,\par
+      needYield: 0,\par
+      saveState: 0,\par
+      restoreState: 0,\par
+      isEOF: 1,\par
+      direction: 'forward',\par
+      docsExamined: 10\par
+    \}\par
+  \},\par
+  command: \{\par
+    find: 'movies',\par
+    filter: \{\par
+      title: 'Pirates of Silicon Valley'\par
+    \},\par
+    '$db': 'Vitcampus'\par
+  \},\par
+  serverInfo: \{\par
+    host: 'DESKTOP-1MV4J90',\par
+    port: 27017,\par
+    version: '7.0.32',\par
+    gitVersion: '40a2e0f542b0a68f0ed51fa216e9d38b9917fe14'\par
+  \},\par
+  serverParameters: \{\par
+    internalQueryFacetBufferSizeBytes: 104857600,\par
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,\par
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,\par
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,\par
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,\par
+    internalQueryProhibitBlockingMergeOnMongoS: 0,\par
+    internalQueryMaxAddToSetBytes: 104857600,\par
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,\par
+    internalQueryFrameworkControl: 'forceClassicEngine'\par
+  \},\par
+  ok: 1\par
+\}\par
+db.movies.createIndex(\{title:1\})\par
+title_1\par
+db.movies.getIndexes()\par
+[\par
+  \{ v: 2, key: \{ _id: 1 \}, name: '_id_' \},\par
+  \{ v: 2, key: \{ title: 1 \}, name: 'title_1' \}\par
+]\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley\par
+\})\par
+SyntaxError: Unterminated string constant. (2:10)\par
+\par
+  1 | db.movies.find(\{\par
+> 2 |    title: 'Pirates of Silicon Valley\par
+    |           ^\par
+  3 | \})\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})\par
+\{\par
+  _id: 1,\par
+  title: 'Pirates of Silicon Valley',\par
+  year: 1999,\par
+  genre: 'Drama',\par
+  director: 'Martyn Burke'\par
+\}\par
+winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+      direction: 'forward'\par
+    \}\par
+SyntaxError: Missing semicolon. (3:12)\par
+\par
+  1 | winningPlan: \{\par
+  2 |       stage: 'COLLSCAN',\par
+> 3 |       filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+    |             ^\par
+  4 |       direction: 'forward'\par
+  5 |     \}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})db.movies.insertMany([\par
+\{\par
+    "_id": 1,\par
+    "title": "Pirates of Silicon Valley",\par
+    "year": 1999,\par
+    "genre": "Drama",\par
+    "director": "Martyn Burke"\par
+\},\par
+\{\par
+    "_id": 2,\par
+    "title": "The Social Network",\par
+    "year": 2010,\par
+    "genre": "Biography",\par
+    "director": "David Fincher"\par
+\},\par
+\{\par
+    "_id": 3,\par
+    "title": "Steve Jobs",\par
+    "year": 2015,\par
+    "genre": "Biography",\par
+    "director": "Danny Boyle"\par
+\},\par
+\{\par
+    "_id": 4,\par
+    "title": "The Imitation Game",\par
+    "year": 2014,\par
+    "genre": "Drama",\par
+    "director": "Morten Tyldum"\par
+\},\par
+\{\par
+    "_id": 5,\par
+    "title": "Hackers",\par
+    "year": 1995,\par
+    "genre": "Crime",\par
+    "director": "Iain Softley"\par
+\},\par
+\{\par
+    "_id": 6,\par
+    "title": "Jobs",\par
+    "year": 2013,\par
+    "genre": "Biography",\par
+    "director": "Joshua Michael Stern"\par
+\},\par
+\{\par
+    "_id": 7,\par
+    "title": "The Matrix",\par
+    "year": 1999,\par
+    "genre": "Sci-Fi",\par
+    "director": "The Wachowskis"\par
+\},\par
+\{\par
+    "_id": 8,\par
+    "title": "Inception",\par
+    "year": 2010,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 9,\par
+    "title": "Interstellar",\par
+    "year": 2014,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 10,\par
+    "title": "Avatar",\par
+    "year": 2009,\par
+    "genre": "Sci-Fi",\par
+    "director": "James Cameron"\par
+\}\par
+]);\par
+\{\par
+  acknowledged: true,\par
+  insertedIds: \{\par
+    '0': 1,\par
+    '1': 2,\par
+    '2': 3,\par
+    '3': 4,\par
+    '4': 5,\par
+    '5': 6,\par
+    '6': 7,\par
+    '7': 8,\par
+    '8': 9,\par
+    '9': 10\par
+  \}\par
+\}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\}).explain('executionStats')\par
+        '$eq': 'Pirates of Silicon Valley'\par
+    planCacheKey: '553F28EB',\par
+    optimizationTimeMillis: 10,\par
+    maxIndexedOrSolutionsReached: false,\par
+    maxIndexedAndSolutionsReached: false,\par
+    maxScansToExplodeReached: false,\par
+    winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      direction: 'forward'\par
+    \},\par
+    rejectedPlans: []\par
+  \},\par
+  executionStats: \{\par
+    executionSuccess: true,\par
+    nReturned: 1,\par
+    executionTimeMillis: 16,\par
+    totalKeysExamined: 0,\par
+    totalDocsExamined: 10,\par
+    executionStages: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      nReturned: 1,\par
+      executionTimeMillisEstimate: 0,\par
+      works: 11,\par
+      advanced: 1,\par
+      needTime: 9,\par
+      needYield: 0,\par
+      saveState: 0,\par
+      restoreState: 0,\par
+      isEOF: 1,\par
+      direction: 'forward',\par
+      docsExamined: 10\par
+    \}\par
+  \},\par
+  command: \{\par
+    find: 'movies',\par
+    filter: \{\par
+      title: 'Pirates of Silicon Valley'\par
+    \},\par
+    '$db': 'Vitcampus'\par
+  \},\par
+  serverInfo: \{\par
+    host: 'DESKTOP-1MV4J90',\par
+    port: 27017,\par
+    version: '7.0.32',\par
+    gitVersion: '40a2e0f542b0a68f0ed51fa216e9d38b9917fe14'\par
+  \},\par
+  serverParameters: \{\par
+    internalQueryFacetBufferSizeBytes: 104857600,\par
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,\par
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,\par
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,\par
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,\par
+    internalQueryProhibitBlockingMergeOnMongoS: 0,\par
+    internalQueryMaxAddToSetBytes: 104857600,\par
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,\par
+    internalQueryFrameworkControl: 'forceClassicEngine'\par
+  \},\par
+  ok: 1\par
+\}\par
+db.movies.createIndex(\{title:1\})\par
+title_1\par
+db.movies.getIndexes()\par
+[\par
+  \{ v: 2, key: \{ _id: 1 \}, name: '_id_' \},\par
+  \{ v: 2, key: \{ title: 1 \}, name: 'title_1' \}\par
+]\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley\par
+\})\par
+SyntaxError: Unterminated string constant. (2:10)\par
+\par
+  1 | db.movies.find(\{\par
+> 2 |    title: 'Pirates of Silicon Valley\par
+    |           ^\par
+  3 | \})\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})\par
+\{\par
+  _id: 1,\par
+  title: 'Pirates of Silicon Valley',\par
+  year: 1999,\par
+  genre: 'Drama',\par
+  director: 'Martyn Burke'\par
+\}\par
+winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+      direction: 'forward'\par
+    \}\par
+SyntaxError: Missing semicolon. (3:12)\par
+\par
+  1 | winningPlan: \{\par
+  2 |       stage: 'COLLSCAN',\par
+> 3 |       filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+    |             ^\par
+  4 |       direction: 'forward'\par
+  5 |     \}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})db.movies.insertMany([\par
+\{\par
+    "_id": 1,\par
+    "title": "Pirates of Silicon Valley",\par
+    "year": 1999,\par
+    "genre": "Drama",\par
+    "director": "Martyn Burke"\par
+\},\par
+\{\par
+    "_id": 2,\par
+    "title": "The Social Network",\par
+    "year": 2010,\par
+    "genre": "Biography",\par
+    "director": "David Fincher"\par
+\},\par
+\{\par
+    "_id": 3,\par
+    "title": "Steve Jobs",\par
+    "year": 2015,\par
+    "genre": "Biography",\par
+    "director": "Danny Boyle"\par
+\},\par
+\{\par
+    "_id": 4,\par
+    "title": "The Imitation Game",\par
+    "year": 2014,\par
+    "genre": "Drama",\par
+    "director": "Morten Tyldum"\par
+\},\par
+\{\par
+    "_id": 5,\par
+    "title": "Hackers",\par
+    "year": 1995,\par
+    "genre": "Crime",\par
+    "director": "Iain Softley"\par
+\},\par
+\{\par
+    "_id": 6,\par
+    "title": "Jobs",\par
+    "year": 2013,\par
+    "genre": "Biography",\par
+    "director": "Joshua Michael Stern"\par
+\},\par
+\{\par
+    "_id": 7,\par
+    "title": "The Matrix",\par
+    "year": 1999,\par
+    "genre": "Sci-Fi",\par
+    "director": "The Wachowskis"\par
+\},\par
+\{\par
+    "_id": 8,\par
+    "title": "Inception",\par
+    "year": 2010,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 9,\par
+    "title": "Interstellar",\par
+    "year": 2014,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 10,\par
+    "title": "Avatar",\par
+    "year": 2009,\par
+    "genre": "Sci-Fi",\par
+    "director": "James Cameron"\par
+\}\par
+]);\par
+\{\par
+  acknowledged: true,\par
+  insertedIds: \{\par
+    '0': 1,\par
+    '1': 2,\par
+    '2': 3,\par
+    '3': 4,\par
+    '4': 5,\par
+    '5': 6,\par
+    '6': 7,\par
+    '7': 8,\par
+    '8': 9,\par
+    '9': 10\par
+  \}\par
+\}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\}).explain('executionStats')\par
+        '$eq': 'Pirates of Silicon Valley'\par
+    planCacheKey: '553F28EB',\par
+    optimizationTimeMillis: 10,\par
+    maxIndexedOrSolutionsReached: false,\par
+    maxIndexedAndSolutionsReached: false,\par
+    maxScansToExplodeReached: false,\par
+    winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      direction: 'forward'\par
+    \},\par
+    rejectedPlans: []\par
+  \},\par
+  executionStats: \{\par
+    executionSuccess: true,\par
+    nReturned: 1,\par
+    executionTimeMillis: 16,\par
+    totalKeysExamined: 0,\par
+    totalDocsExamined: 10,\par
+    executionStages: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      nReturned: 1,\par
+      executionTimeMillisEstimate: 0,\par
+      works: 11,\par
+      advanced: 1,\par
+      needTime: 9,\par
+      needYield: 0,\par
+      saveState: 0,\par
+      restoreState: 0,\par
+      isEOF: 1,\par
+      direction: 'forward',\par
+      docsExamined: 10\par
+    \}\par
+  \},\par
+  command: \{\par
+    find: 'movies',\par
+    filter: \{\par
+      title: 'Pirates of Silicon Valley'\par
+    \},\par
+    '$db': 'Vitcampus'\par
+  \},\par
+  serverInfo: \{\par
+    host: 'DESKTOP-1MV4J90',\par
+    port: 27017,\par
+    version: '7.0.32',\par
+    gitVersion: '40a2e0f542b0a68f0ed51fa216e9d38b9917fe14'\par
+  \},\par
+  serverParameters: \{\par
+    internalQueryFacetBufferSizeBytes: 104857600,\par
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,\par
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,\par
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,\par
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,\par
+    internalQueryProhibitBlockingMergeOnMongoS: 0,\par
+    internalQueryMaxAddToSetBytes: 104857600,\par
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,\par
+    internalQueryFrameworkControl: 'forceClassicEngine'\par
+  \},\par
+  ok: 1\par
+\}\par
+db.movies.createIndex(\{title:1\})\par
+title_1\par
+db.movies.getIndexes()\par
+[\par
+  \{ v: 2, key: \{ _id: 1 \}, name: '_id_' \},\par
+  \{ v: 2, key: \{ title: 1 \}, name: 'title_1' \}\par
+]\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley\par
+\})\par
+SyntaxError: Unterminated string constant. (2:10)\par
+\par
+  1 | db.movies.find(\{\par
+> 2 |    title: 'Pirates of Silicon Valley\par
+    |           ^\par
+  3 | \})\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})\par
+\{\par
+  _id: 1,\par
+  title: 'Pirates of Silicon Valley',\par
+  year: 1999,\par
+  genre: 'Drama',\par
+  director: 'Martyn Burke'\par
+\}\par
+winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+      direction: 'forward'\par
+    \}\par
+SyntaxError: Missing semicolon. (3:12)\par
+\par
+  1 | winningPlan: \{\par
+  2 |       stage: 'COLLSCAN',\par
+> 3 |       filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+    |             ^\par
+  4 |       direction: 'forward'\par
+  5 |     \}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})db.movies.insertMany([\par
+\{\par
+    "_id": 1,\par
+    "title": "Pirates of Silicon Valley",\par
+    "year": 1999,\par
+    "genre": "Drama",\par
+    "director": "Martyn Burke"\par
+\},\par
+\{\par
+    "_id": 2,\par
+    "title": "The Social Network",\par
+    "year": 2010,\par
+    "genre": "Biography",\par
+    "director": "David Fincher"\par
+\},\par
+\{\par
+    "_id": 3,\par
+    "title": "Steve Jobs",\par
+    "year": 2015,\par
+    "genre": "Biography",\par
+    "director": "Danny Boyle"\par
+\},\par
+\{\par
+    "_id": 4,\par
+    "title": "The Imitation Game",\par
+    "year": 2014,\par
+    "genre": "Drama",\par
+    "director": "Morten Tyldum"\par
+\},\par
+\{\par
+    "_id": 5,\par
+    "title": "Hackers",\par
+    "year": 1995,\par
+    "genre": "Crime",\par
+    "director": "Iain Softley"\par
+\},\par
+\{\par
+    "_id": 6,\par
+    "title": "Jobs",\par
+    "year": 2013,\par
+    "genre": "Biography",\par
+    "director": "Joshua Michael Stern"\par
+\},\par
+\{\par
+    "_id": 7,\par
+    "title": "The Matrix",\par
+    "year": 1999,\par
+    "genre": "Sci-Fi",\par
+    "director": "The Wachowskis"\par
+\},\par
+\{\par
+    "_id": 8,\par
+    "title": "Inception",\par
+    "year": 2010,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 9,\par
+    "title": "Interstellar",\par
+    "year": 2014,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 10,\par
+    "title": "Avatar",\par
+    "year": 2009,\par
+    "genre": "Sci-Fi",\par
+    "director": "James Cameron"\par
+\}\par
+]);\par
+\{\par
+  acknowledged: true,\par
+  insertedIds: \{\par
+    '0': 1,\par
+    '1': 2,\par
+    '2': 3,\par
+    '3': 4,\par
+    '4': 5,\par
+    '5': 6,\par
+    '6': 7,\par
+    '7': 8,\par
+    '8': 9,\par
+    '9': 10\par
+  \}\par
+\}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\}).explain('executionStats')\par
+        '$eq': 'Pirates of Silicon Valley'\par
+    planCacheKey: '553F28EB',\par
+    optimizationTimeMillis: 10,\par
+    maxIndexedOrSolutionsReached: false,\par
+    maxIndexedAndSolutionsReached: false,\par
+    maxScansToExplodeReached: false,\par
+    winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      direction: 'forward'\par
+    \},\par
+    rejectedPlans: []\par
+  \},\par
+  executionStats: \{\par
+    executionSuccess: true,\par
+    nReturned: 1,\par
+    executionTimeMillis: 16,\par
+    totalKeysExamined: 0,\par
+    totalDocsExamined: 10,\par
+    executionStages: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      nReturned: 1,\par
+      executionTimeMillisEstimate: 0,\par
+      works: 11,\par
+      advanced: 1,\par
+      needTime: 9,\par
+      needYield: 0,\par
+      saveState: 0,\par
+      restoreState: 0,\par
+      isEOF: 1,\par
+      direction: 'forward',\par
+      docsExamined: 10\par
+    \}\par
+  \},\par
+  command: \{\par
+    find: 'movies',\par
+    filter: \{\par
+      title: 'Pirates of Silicon Valley'\par
+    \},\par
+    '$db': 'Vitcampus'\par
+  \},\par
+  serverInfo: \{\par
+    host: 'DESKTOP-1MV4J90',\par
+    port: 27017,\par
+    version: '7.0.32',\par
+    gitVersion: '40a2e0f542b0a68f0ed51fa216e9d38b9917fe14'\par
+  \},\par
+  serverParameters: \{\par
+    internalQueryFacetBufferSizeBytes: 104857600,\par
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,\par
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,\par
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,\par
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,\par
+    internalQueryProhibitBlockingMergeOnMongoS: 0,\par
+    internalQueryMaxAddToSetBytes: 104857600,\par
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,\par
+    internalQueryFrameworkControl: 'forceClassicEngine'\par
+  \},\par
+  ok: 1\par
+\}\par
+db.movies.createIndex(\{title:1\})\par
+title_1\par
+db.movies.getIndexes()\par
+[\par
+  \{ v: 2, key: \{ _id: 1 \}, name: '_id_' \},\par
+  \{ v: 2, key: \{ title: 1 \}, name: 'title_1' \}\par
+]\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley\par
+\})\par
+SyntaxError: Unterminated string constant. (2:10)\par
+\par
+  1 | db.movies.find(\{\par
+> 2 |    title: 'Pirates of Silicon Valley\par
+    |           ^\par
+  3 | \})\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})\par
+\{\par
+  _id: 1,\par
+  title: 'Pirates of Silicon Valley',\par
+  year: 1999,\par
+  genre: 'Drama',\par
+  director: 'Martyn Burke'\par
+\}\par
+winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+      direction: 'forward'\par
+    \}\par
+SyntaxError: Missing semicolon. (3:12)\par
+\par
+  1 | winningPlan: \{\par
+  2 |       stage: 'COLLSCAN',\par
+> 3 |       filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+    |             ^\par
+  4 |       direction: 'forward'\par
+  5 |     \}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})db.movies.insertMany([\par
+\{\par
+    "_id": 1,\par
+    "title": "Pirates of Silicon Valley",\par
+    "year": 1999,\par
+    "genre": "Drama",\par
+    "director": "Martyn Burke"\par
+\},\par
+\{\par
+    "_id": 2,\par
+    "title": "The Social Network",\par
+    "year": 2010,\par
+    "genre": "Biography",\par
+    "director": "David Fincher"\par
+\},\par
+\{\par
+    "_id": 3,\par
+    "title": "Steve Jobs",\par
+    "year": 2015,\par
+    "genre": "Biography",\par
+    "director": "Danny Boyle"\par
+\},\par
+\{\par
+    "_id": 4,\par
+    "title": "The Imitation Game",\par
+    "year": 2014,\par
+    "genre": "Drama",\par
+    "director": "Morten Tyldum"\par
+\},\par
+\{\par
+    "_id": 5,\par
+    "title": "Hackers",\par
+    "year": 1995,\par
+    "genre": "Crime",\par
+    "director": "Iain Softley"\par
+\},\par
+\{\par
+    "_id": 6,\par
+    "title": "Jobs",\par
+    "year": 2013,\par
+    "genre": "Biography",\par
+    "director": "Joshua Michael Stern"\par
+\},\par
+\{\par
+    "_id": 7,\par
+    "title": "The Matrix",\par
+    "year": 1999,\par
+    "genre": "Sci-Fi",\par
+    "director": "The Wachowskis"\par
+\},\par
+\{\par
+    "_id": 8,\par
+    "title": "Inception",\par
+    "year": 2010,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 9,\par
+    "title": "Interstellar",\par
+    "year": 2014,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 10,\par
+    "title": "Avatar",\par
+    "year": 2009,\par
+    "genre": "Sci-Fi",\par
+    "director": "James Cameron"\par
+\}\par
+]);\par
+\{\par
+  acknowledged: true,\par
+  insertedIds: \{\par
+    '0': 1,\par
+    '1': 2,\par
+    '2': 3,\par
+    '3': 4,\par
+    '4': 5,\par
+    '5': 6,\par
+    '6': 7,\par
+    '7': 8,\par
+    '8': 9,\par
+    '9': 10\par
+  \}\par
+\}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\}).explain('executionStats')\par
+        '$eq': 'Pirates of Silicon Valley'\par
+    planCacheKey: '553F28EB',\par
+    optimizationTimeMillis: 10,\par
+    maxIndexedOrSolutionsReached: false,\par
+    maxIndexedAndSolutionsReached: false,\par
+    maxScansToExplodeReached: false,\par
+    winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      direction: 'forward'\par
+    \},\par
+    rejectedPlans: []\par
+  \},\par
+  executionStats: \{\par
+    executionSuccess: true,\par
+    nReturned: 1,\par
+    executionTimeMillis: 16,\par
+    totalKeysExamined: 0,\par
+    totalDocsExamined: 10,\par
+    executionStages: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      nReturned: 1,\par
+      executionTimeMillisEstimate: 0,\par
+      works: 11,\par
+      advanced: 1,\par
+      needTime: 9,\par
+      needYield: 0,\par
+      saveState: 0,\par
+      restoreState: 0,\par
+      isEOF: 1,\par
+      direction: 'forward',\par
+      docsExamined: 10\par
+    \}\par
+  \},\par
+  command: \{\par
+    find: 'movies',\par
+    filter: \{\par
+      title: 'Pirates of Silicon Valley'\par
+    \},\par
+    '$db': 'Vitcampus'\par
+  \},\par
+  serverInfo: \{\par
+    host: 'DESKTOP-1MV4J90',\par
+    port: 27017,\par
+    version: '7.0.32',\par
+    gitVersion: '40a2e0f542b0a68f0ed51fa216e9d38b9917fe14'\par
+  \},\par
+  serverParameters: \{\par
+    internalQueryFacetBufferSizeBytes: 104857600,\par
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,\par
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,\par
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,\par
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,\par
+    internalQueryProhibitBlockingMergeOnMongoS: 0,\par
+    internalQueryMaxAddToSetBytes: 104857600,\par
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,\par
+    internalQueryFrameworkControl: 'forceClassicEngine'\par
+  \},\par
+  ok: 1\par
+\}\par
+db.movies.createIndex(\{title:1\})\par
+title_1\par
+db.movies.getIndexes()\par
+[\par
+  \{ v: 2, key: \{ _id: 1 \}, name: '_id_' \},\par
+  \{ v: 2, key: \{ title: 1 \}, name: 'title_1' \}\par
+]\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley\par
+\})\par
+SyntaxError: Unterminated string constant. (2:10)\par
+\par
+  1 | db.movies.find(\{\par
+> 2 |    title: 'Pirates of Silicon Valley\par
+    |           ^\par
+  3 | \})\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})\par
+\{\par
+  _id: 1,\par
+  title: 'Pirates of Silicon Valley',\par
+  year: 1999,\par
+  genre: 'Drama',\par
+  director: 'Martyn Burke'\par
+\}\par
+winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+      direction: 'forward'\par
+    \}\par
+SyntaxError: Missing semicolon. (3:12)\par
+\par
+  1 | winningPlan: \{\par
+  2 |       stage: 'COLLSCAN',\par
+> 3 |       filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+    |             ^\par
+  4 |       direction: 'forward'\par
+  5 |     \}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})db.movies.insertMany([\par
+\{\par
+    "_id": 1,\par
+    "title": "Pirates of Silicon Valley",\par
+    "year": 1999,\par
+    "genre": "Drama",\par
+    "director": "Martyn Burke"\par
+\},\par
+\{\par
+    "_id": 2,\par
+    "title": "The Social Network",\par
+    "year": 2010,\par
+    "genre": "Biography",\par
+    "director": "David Fincher"\par
+\},\par
+\{\par
+    "_id": 3,\par
+    "title": "Steve Jobs",\par
+    "year": 2015,\par
+    "genre": "Biography",\par
+    "director": "Danny Boyle"\par
+\},\par
+\{\par
+    "_id": 4,\par
+    "title": "The Imitation Game",\par
+    "year": 2014,\par
+    "genre": "Drama",\par
+    "director": "Morten Tyldum"\par
+\},\par
+\{\par
+    "_id": 5,\par
+    "title": "Hackers",\par
+    "year": 1995,\par
+    "genre": "Crime",\par
+    "director": "Iain Softley"\par
+\},\par
+\{\par
+    "_id": 6,\par
+    "title": "Jobs",\par
+    "year": 2013,\par
+    "genre": "Biography",\par
+    "director": "Joshua Michael Stern"\par
+\},\par
+\{\par
+    "_id": 7,\par
+    "title": "The Matrix",\par
+    "year": 1999,\par
+    "genre": "Sci-Fi",\par
+    "director": "The Wachowskis"\par
+\},\par
+\{\par
+    "_id": 8,\par
+    "title": "Inception",\par
+    "year": 2010,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 9,\par
+    "title": "Interstellar",\par
+    "year": 2014,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 10,\par
+    "title": "Avatar",\par
+    "year": 2009,\par
+    "genre": "Sci-Fi",\par
+    "director": "James Cameron"\par
+\}\par
+]);\par
+\{\par
+  acknowledged: true,\par
+  insertedIds: \{\par
+    '0': 1,\par
+    '1': 2,\par
+    '2': 3,\par
+    '3': 4,\par
+    '4': 5,\par
+    '5': 6,\par
+    '6': 7,\par
+    '7': 8,\par
+    '8': 9,\par
+    '9': 10\par
+  \}\par
+\}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\}).explain('executionStats')\par
+        '$eq': 'Pirates of Silicon Valley'\par
+    planCacheKey: '553F28EB',\par
+    optimizationTimeMillis: 10,\par
+    maxIndexedOrSolutionsReached: false,\par
+    maxIndexedAndSolutionsReached: false,\par
+    maxScansToExplodeReached: false,\par
+    winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      direction: 'forward'\par
+    \},\par
+    rejectedPlans: []\par
+  \},\par
+  executionStats: \{\par
+    executionSuccess: true,\par
+    nReturned: 1,\par
+    executionTimeMillis: 16,\par
+    totalKeysExamined: 0,\par
+    totalDocsExamined: 10,\par
+    executionStages: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      nReturned: 1,\par
+      executionTimeMillisEstimate: 0,\par
+      works: 11,\par
+      advanced: 1,\par
+      needTime: 9,\par
+      needYield: 0,\par
+      saveState: 0,\par
+      restoreState: 0,\par
+      isEOF: 1,\par
+      direction: 'forward',\par
+      docsExamined: 10\par
+    \}\par
+  \},\par
+  command: \{\par
+    find: 'movies',\par
+    filter: \{\par
+      title: 'Pirates of Silicon Valley'\par
+    \},\par
+    '$db': 'Vitcampus'\par
+  \},\par
+  serverInfo: \{\par
+    host: 'DESKTOP-1MV4J90',\par
+    port: 27017,\par
+    version: '7.0.32',\par
+    gitVersion: '40a2e0f542b0a68f0ed51fa216e9d38b9917fe14'\par
+  \},\par
+  serverParameters: \{\par
+    internalQueryFacetBufferSizeBytes: 104857600,\par
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,\par
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,\par
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,\par
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,\par
+    internalQueryProhibitBlockingMergeOnMongoS: 0,\par
+    internalQueryMaxAddToSetBytes: 104857600,\par
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,\par
+    internalQueryFrameworkControl: 'forceClassicEngine'\par
+  \},\par
+  ok: 1\par
+\}\par
+db.movies.createIndex(\{title:1\})\par
+title_1\par
+db.movies.getIndexes()\par
+[\par
+  \{ v: 2, key: \{ _id: 1 \}, name: '_id_' \},\par
+  \{ v: 2, key: \{ title: 1 \}, name: 'title_1' \}\par
+]\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley\par
+\})\par
+SyntaxError: Unterminated string constant. (2:10)\par
+\par
+  1 | db.movies.find(\{\par
+> 2 |    title: 'Pirates of Silicon Valley\par
+    |           ^\par
+  3 | \})\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})\par
+\{\par
+  _id: 1,\par
+  title: 'Pirates of Silicon Valley',\par
+  year: 1999,\par
+  genre: 'Drama',\par
+  director: 'Martyn Burke'\par
+\}\par
+winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+      direction: 'forward'\par
+    \}\par
+SyntaxError: Missing semicolon. (3:12)\par
+\par
+  1 | winningPlan: \{\par
+  2 |       stage: 'COLLSCAN',\par
+> 3 |       filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+    |             ^\par
+  4 |       direction: 'forward'\par
+  5 |     \}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})db.movies.insertMany([\par
+\{\par
+    "_id": 1,\par
+    "title": "Pirates of Silicon Valley",\par
+    "year": 1999,\par
+    "genre": "Drama",\par
+    "director": "Martyn Burke"\par
+\},\par
+\{\par
+    "_id": 2,\par
+    "title": "The Social Network",\par
+    "year": 2010,\par
+    "genre": "Biography",\par
+    "director": "David Fincher"\par
+\},\par
+\{\par
+    "_id": 3,\par
+    "title": "Steve Jobs",\par
+    "year": 2015,\par
+    "genre": "Biography",\par
+    "director": "Danny Boyle"\par
+\},\par
+\{\par
+    "_id": 4,\par
+    "title": "The Imitation Game",\par
+    "year": 2014,\par
+    "genre": "Drama",\par
+    "director": "Morten Tyldum"\par
+\},\par
+\{\par
+    "_id": 5,\par
+    "title": "Hackers",\par
+    "year": 1995,\par
+    "genre": "Crime",\par
+    "director": "Iain Softley"\par
+\},\par
+\{\par
+    "_id": 6,\par
+    "title": "Jobs",\par
+    "year": 2013,\par
+    "genre": "Biography",\par
+    "director": "Joshua Michael Stern"\par
+\},\par
+\{\par
+    "_id": 7,\par
+    "title": "The Matrix",\par
+    "year": 1999,\par
+    "genre": "Sci-Fi",\par
+    "director": "The Wachowskis"\par
+\},\par
+\{\par
+    "_id": 8,\par
+    "title": "Inception",\par
+    "year": 2010,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 9,\par
+    "title": "Interstellar",\par
+    "year": 2014,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 10,\par
+    "title": "Avatar",\par
+    "year": 2009,\par
+    "genre": "Sci-Fi",\par
+    "director": "James Cameron"\par
+\}\par
+]);\par
+\{\par
+  acknowledged: true,\par
+  insertedIds: \{\par
+    '0': 1,\par
+    '1': 2,\par
+    '2': 3,\par
+    '3': 4,\par
+    '4': 5,\par
+    '5': 6,\par
+    '6': 7,\par
+    '7': 8,\par
+    '8': 9,\par
+    '9': 10\par
+  \}\par
+\}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\}).explain('executionStats')\par
+        '$eq': 'Pirates of Silicon Valley'\par
+    planCacheKey: '553F28EB',\par
+    optimizationTimeMillis: 10,\par
+    maxIndexedOrSolutionsReached: false,\par
+    maxIndexedAndSolutionsReached: false,\par
+    maxScansToExplodeReached: false,\par
+    winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      direction: 'forward'\par
+    \},\par
+    rejectedPlans: []\par
+  \},\par
+  executionStats: \{\par
+    executionSuccess: true,\par
+    nReturned: 1,\par
+    executionTimeMillis: 16,\par
+    totalKeysExamined: 0,\par
+    totalDocsExamined: 10,\par
+    executionStages: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      nReturned: 1,\par
+      executionTimeMillisEstimate: 0,\par
+      works: 11,\par
+      advanced: 1,\par
+      needTime: 9,\par
+      needYield: 0,\par
+      saveState: 0,\par
+      restoreState: 0,\par
+      isEOF: 1,\par
+      direction: 'forward',\par
+      docsExamined: 10\par
+    \}\par
+  \},\par
+  command: \{\par
+    find: 'movies',\par
+    filter: \{\par
+      title: 'Pirates of Silicon Valley'\par
+    \},\par
+    '$db': 'Vitcampus'\par
+  \},\par
+  serverInfo: \{\par
+    host: 'DESKTOP-1MV4J90',\par
+    port: 27017,\par
+    version: '7.0.32',\par
+    gitVersion: '40a2e0f542b0a68f0ed51fa216e9d38b9917fe14'\par
+  \},\par
+  serverParameters: \{\par
+    internalQueryFacetBufferSizeBytes: 104857600,\par
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,\par
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,\par
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,\par
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,\par
+    internalQueryProhibitBlockingMergeOnMongoS: 0,\par
+    internalQueryMaxAddToSetBytes: 104857600,\par
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,\par
+    internalQueryFrameworkControl: 'forceClassicEngine'\par
+  \},\par
+  ok: 1\par
+\}\par
+db.movies.createIndex(\{title:1\})\par
+title_1\par
+db.movies.getIndexes()\par
+[\par
+  \{ v: 2, key: \{ _id: 1 \}, name: '_id_' \},\par
+  \{ v: 2, key: \{ title: 1 \}, name: 'title_1' \}\par
+]\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley\par
+\})\par
+SyntaxError: Unterminated string constant. (2:10)\par
+\par
+  1 | db.movies.find(\{\par
+> 2 |    title: 'Pirates of Silicon Valley\par
+    |           ^\par
+  3 | \})\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})\par
+\{\par
+  _id: 1,\par
+  title: 'Pirates of Silicon Valley',\par
+  year: 1999,\par
+  genre: 'Drama',\par
+  director: 'Martyn Burke'\par
+\}\par
+winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+      direction: 'forward'\par
+    \}\par
+SyntaxError: Missing semicolon. (3:12)\par
+\par
+  1 | winningPlan: \{\par
+  2 |       stage: 'COLLSCAN',\par
+> 3 |       filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+    |             ^\par
+  4 |       direction: 'forward'\par
+  5 |     \}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})db.movies.insertMany([\par
+\{\par
+    "_id": 1,\par
+    "title": "Pirates of Silicon Valley",\par
+    "year": 1999,\par
+    "genre": "Drama",\par
+    "director": "Martyn Burke"\par
+\},\par
+\{\par
+    "_id": 2,\par
+    "title": "The Social Network",\par
+    "year": 2010,\par
+    "genre": "Biography",\par
+    "director": "David Fincher"\par
+\},\par
+\{\par
+    "_id": 3,\par
+    "title": "Steve Jobs",\par
+    "year": 2015,\par
+    "genre": "Biography",\par
+    "director": "Danny Boyle"\par
+\},\par
+\{\par
+    "_id": 4,\par
+    "title": "The Imitation Game",\par
+    "year": 2014,\par
+    "genre": "Drama",\par
+    "director": "Morten Tyldum"\par
+\},\par
+\{\par
+    "_id": 5,\par
+    "title": "Hackers",\par
+    "year": 1995,\par
+    "genre": "Crime",\par
+    "director": "Iain Softley"\par
+\},\par
+\{\par
+    "_id": 6,\par
+    "title": "Jobs",\par
+    "year": 2013,\par
+    "genre": "Biography",\par
+    "director": "Joshua Michael Stern"\par
+\},\par
+\{\par
+    "_id": 7,\par
+    "title": "The Matrix",\par
+    "year": 1999,\par
+    "genre": "Sci-Fi",\par
+    "director": "The Wachowskis"\par
+\},\par
+\{\par
+    "_id": 8,\par
+    "title": "Inception",\par
+    "year": 2010,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 9,\par
+    "title": "Interstellar",\par
+    "year": 2014,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 10,\par
+    "title": "Avatar",\par
+    "year": 2009,\par
+    "genre": "Sci-Fi",\par
+    "director": "James Cameron"\par
+\}\par
+]);\par
+\{\par
+  acknowledged: true,\par
+  insertedIds: \{\par
+    '0': 1,\par
+    '1': 2,\par
+    '2': 3,\par
+    '3': 4,\par
+    '4': 5,\par
+    '5': 6,\par
+    '6': 7,\par
+    '7': 8,\par
+    '8': 9,\par
+    '9': 10\par
+  \}\par
+\}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\}).explain('executionStats')\par
+        '$eq': 'Pirates of Silicon Valley'\par
+    planCacheKey: '553F28EB',\par
+    optimizationTimeMillis: 10,\par
+    maxIndexedOrSolutionsReached: false,\par
+    maxIndexedAndSolutionsReached: false,\par
+    maxScansToExplodeReached: false,\par
+    winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      direction: 'forward'\par
+    \},\par
+    rejectedPlans: []\par
+  \},\par
+  executionStats: \{\par
+    executionSuccess: true,\par
+    nReturned: 1,\par
+    executionTimeMillis: 16,\par
+    totalKeysExamined: 0,\par
+    totalDocsExamined: 10,\par
+    executionStages: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      nReturned: 1,\par
+      executionTimeMillisEstimate: 0,\par
+      works: 11,\par
+      advanced: 1,\par
+      needTime: 9,\par
+      needYield: 0,\par
+      saveState: 0,\par
+      restoreState: 0,\par
+      isEOF: 1,\par
+      direction: 'forward',\par
+      docsExamined: 10\par
+    \}\par
+  \},\par
+  command: \{\par
+    find: 'movies',\par
+    filter: \{\par
+      title: 'Pirates of Silicon Valley'\par
+    \},\par
+    '$db': 'Vitcampus'\par
+  \},\par
+  serverInfo: \{\par
+    host: 'DESKTOP-1MV4J90',\par
+    port: 27017,\par
+    version: '7.0.32',\par
+    gitVersion: '40a2e0f542b0a68f0ed51fa216e9d38b9917fe14'\par
+  \},\par
+  serverParameters: \{\par
+    internalQueryFacetBufferSizeBytes: 104857600,\par
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,\par
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,\par
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,\par
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,\par
+    internalQueryProhibitBlockingMergeOnMongoS: 0,\par
+    internalQueryMaxAddToSetBytes: 104857600,\par
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,\par
+    internalQueryFrameworkControl: 'forceClassicEngine'\par
+  \},\par
+  ok: 1\par
+\}\par
+db.movies.createIndex(\{title:1\})\par
+title_1\par
+db.movies.getIndexes()\par
+[\par
+  \{ v: 2, key: \{ _id: 1 \}, name: '_id_' \},\par
+  \{ v: 2, key: \{ title: 1 \}, name: 'title_1' \}\par
+]\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley\par
+\})\par
+SyntaxError: Unterminated string constant. (2:10)\par
+\par
+  1 | db.movies.find(\{\par
+> 2 |    title: 'Pirates of Silicon Valley\par
+    |           ^\par
+  3 | \})\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})\par
+\{\par
+  _id: 1,\par
+  title: 'Pirates of Silicon Valley',\par
+  year: 1999,\par
+  genre: 'Drama',\par
+  director: 'Martyn Burke'\par
+\}\par
+winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+      direction: 'forward'\par
+    \}\par
+SyntaxError: Missing semicolon. (3:12)\par
+\par
+  1 | winningPlan: \{\par
+  2 |       stage: 'COLLSCAN',\par
+> 3 |       filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+    |             ^\par
+  4 |       direction: 'forward'\par
+  5 |     \}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})db.movies.insertMany([\par
+\{\par
+    "_id": 1,\par
+    "title": "Pirates of Silicon Valley",\par
+    "year": 1999,\par
+    "genre": "Drama",\par
+    "director": "Martyn Burke"\par
+\},\par
+\{\par
+    "_id": 2,\par
+    "title": "The Social Network",\par
+    "year": 2010,\par
+    "genre": "Biography",\par
+    "director": "David Fincher"\par
+\},\par
+\{\par
+    "_id": 3,\par
+    "title": "Steve Jobs",\par
+    "year": 2015,\par
+    "genre": "Biography",\par
+    "director": "Danny Boyle"\par
+\},\par
+\{\par
+    "_id": 4,\par
+    "title": "The Imitation Game",\par
+    "year": 2014,\par
+    "genre": "Drama",\par
+    "director": "Morten Tyldum"\par
+\},\par
+\{\par
+    "_id": 5,\par
+    "title": "Hackers",\par
+    "year": 1995,\par
+    "genre": "Crime",\par
+    "director": "Iain Softley"\par
+\},\par
+\{\par
+    "_id": 6,\par
+    "title": "Jobs",\par
+    "year": 2013,\par
+    "genre": "Biography",\par
+    "director": "Joshua Michael Stern"\par
+\},\par
+\{\par
+    "_id": 7,\par
+    "title": "The Matrix",\par
+    "year": 1999,\par
+    "genre": "Sci-Fi",\par
+    "director": "The Wachowskis"\par
+\},\par
+\{\par
+    "_id": 8,\par
+    "title": "Inception",\par
+    "year": 2010,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 9,\par
+    "title": "Interstellar",\par
+    "year": 2014,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 10,\par
+    "title": "Avatar",\par
+    "year": 2009,\par
+    "genre": "Sci-Fi",\par
+    "director": "James Cameron"\par
+\}\par
+]);\par
+\{\par
+  acknowledged: true,\par
+  insertedIds: \{\par
+    '0': 1,\par
+    '1': 2,\par
+    '2': 3,\par
+    '3': 4,\par
+    '4': 5,\par
+    '5': 6,\par
+    '6': 7,\par
+    '7': 8,\par
+    '8': 9,\par
+    '9': 10\par
+  \}\par
+\}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\}).explain('executionStats')\par
+        '$eq': 'Pirates of Silicon Valley'\par
+    planCacheKey: '553F28EB',\par
+    optimizationTimeMillis: 10,\par
+    maxIndexedOrSolutionsReached: false,\par
+    maxIndexedAndSolutionsReached: false,\par
+    maxScansToExplodeReached: false,\par
+    winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      direction: 'forward'\par
+    \},\par
+    rejectedPlans: []\par
+  \},\par
+  executionStats: \{\par
+    executionSuccess: true,\par
+    nReturned: 1,\par
+    executionTimeMillis: 16,\par
+    totalKeysExamined: 0,\par
+    totalDocsExamined: 10,\par
+    executionStages: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      nReturned: 1,\par
+      executionTimeMillisEstimate: 0,\par
+      works: 11,\par
+      advanced: 1,\par
+      needTime: 9,\par
+      needYield: 0,\par
+      saveState: 0,\par
+      restoreState: 0,\par
+      isEOF: 1,\par
+      direction: 'forward',\par
+      docsExamined: 10\par
+    \}\par
+  \},\par
+  command: \{\par
+    find: 'movies',\par
+    filter: \{\par
+      title: 'Pirates of Silicon Valley'\par
+    \},\par
+    '$db': 'Vitcampus'\par
+  \},\par
+  serverInfo: \{\par
+    host: 'DESKTOP-1MV4J90',\par
+    port: 27017,\par
+    version: '7.0.32',\par
+    gitVersion: '40a2e0f542b0a68f0ed51fa216e9d38b9917fe14'\par
+  \},\par
+  serverParameters: \{\par
+    internalQueryFacetBufferSizeBytes: 104857600,\par
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,\par
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,\par
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,\par
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,\par
+    internalQueryProhibitBlockingMergeOnMongoS: 0,\par
+    internalQueryMaxAddToSetBytes: 104857600,\par
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,\par
+    internalQueryFrameworkControl: 'forceClassicEngine'\par
+  \},\par
+  ok: 1\par
+\}\par
+db.movies.createIndex(\{title:1\})\par
+title_1\par
+db.movies.getIndexes()\par
+[\par
+  \{ v: 2, key: \{ _id: 1 \}, name: '_id_' \},\par
+  \{ v: 2, key: \{ title: 1 \}, name: 'title_1' \}\par
+]\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley\par
+\})\par
+SyntaxError: Unterminated string constant. (2:10)\par
+\par
+  1 | db.movies.find(\{\par
+> 2 |    title: 'Pirates of Silicon Valley\par
+    |           ^\par
+  3 | \})\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})\par
+\{\par
+  _id: 1,\par
+  title: 'Pirates of Silicon Valley',\par
+  year: 1999,\par
+  genre: 'Drama',\par
+  director: 'Martyn Burke'\par
+\}\par
+winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+      direction: 'forward'\par
+    \}\par
+SyntaxError: Missing semicolon. (3:12)\par
+\par
+  1 | winningPlan: \{\par
+  2 |       stage: 'COLLSCAN',\par
+> 3 |       filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+    |             ^\par
+  4 |       direction: 'forward'\par
+  5 |     \}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})db.movies.insertMany([\par
+\{\par
+    "_id": 1,\par
+    "title": "Pirates of Silicon Valley",\par
+    "year": 1999,\par
+    "genre": "Drama",\par
+    "director": "Martyn Burke"\par
+\},\par
+\{\par
+    "_id": 2,\par
+    "title": "The Social Network",\par
+    "year": 2010,\par
+    "genre": "Biography",\par
+    "director": "David Fincher"\par
+\},\par
+\{\par
+    "_id": 3,\par
+    "title": "Steve Jobs",\par
+    "year": 2015,\par
+    "genre": "Biography",\par
+    "director": "Danny Boyle"\par
+\},\par
+\{\par
+    "_id": 4,\par
+    "title": "The Imitation Game",\par
+    "year": 2014,\par
+    "genre": "Drama",\par
+    "director": "Morten Tyldum"\par
+\},\par
+\{\par
+    "_id": 5,\par
+    "title": "Hackers",\par
+    "year": 1995,\par
+    "genre": "Crime",\par
+    "director": "Iain Softley"\par
+\},\par
+\{\par
+    "_id": 6,\par
+    "title": "Jobs",\par
+    "year": 2013,\par
+    "genre": "Biography",\par
+    "director": "Joshua Michael Stern"\par
+\},\par
+\{\par
+    "_id": 7,\par
+    "title": "The Matrix",\par
+    "year": 1999,\par
+    "genre": "Sci-Fi",\par
+    "director": "The Wachowskis"\par
+\},\par
+\{\par
+    "_id": 8,\par
+    "title": "Inception",\par
+    "year": 2010,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 9,\par
+    "title": "Interstellar",\par
+    "year": 2014,\par
+    "genre": "Sci-Fi",\par
+    "director": "Christopher Nolan"\par
+\},\par
+\{\par
+    "_id": 10,\par
+    "title": "Avatar",\par
+    "year": 2009,\par
+    "genre": "Sci-Fi",\par
+    "director": "James Cameron"\par
+\}\par
+]);\par
+\{\par
+  acknowledged: true,\par
+  insertedIds: \{\par
+    '0': 1,\par
+    '1': 2,\par
+    '2': 3,\par
+    '3': 4,\par
+    '4': 5,\par
+    '5': 6,\par
+    '6': 7,\par
+    '7': 8,\par
+    '8': 9,\par
+    '9': 10\par
+  \}\par
+\}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\}).explain('executionStats')\par
+        '$eq': 'Pirates of Silicon Valley'\par
+    planCacheKey: '553F28EB',\par
+    optimizationTimeMillis: 10,\par
+    maxIndexedOrSolutionsReached: false,\par
+    maxIndexedAndSolutionsReached: false,\par
+    maxScansToExplodeReached: false,\par
+    winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      direction: 'forward'\par
+    \},\par
+    rejectedPlans: []\par
+  \},\par
+  executionStats: \{\par
+    executionSuccess: true,\par
+    nReturned: 1,\par
+    executionTimeMillis: 16,\par
+    totalKeysExamined: 0,\par
+    totalDocsExamined: 10,\par
+    executionStages: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        title: \{\par
+          '$eq': 'Pirates of Silicon Valley'\par
+        \}\par
+      \},\par
+      nReturned: 1,\par
+      executionTimeMillisEstimate: 0,\par
+      works: 11,\par
+      advanced: 1,\par
+      needTime: 9,\par
+      needYield: 0,\par
+      saveState: 0,\par
+      restoreState: 0,\par
+      isEOF: 1,\par
+      direction: 'forward',\par
+      docsExamined: 10\par
+    \}\par
+  \},\par
+  command: \{\par
+    find: 'movies',\par
+    filter: \{\par
+      title: 'Pirates of Silicon Valley'\par
+    \},\par
+    '$db': 'Vitcampus'\par
+  \},\par
+  serverInfo: \{\par
+    host: 'DESKTOP-1MV4J90',\par
+    port: 27017,\par
+    version: '7.0.32',\par
+    gitVersion: '40a2e0f542b0a68f0ed51fa216e9d38b9917fe14'\par
+  \},\par
+  serverParameters: \{\par
+    internalQueryFacetBufferSizeBytes: 104857600,\par
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,\par
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,\par
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,\par
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,\par
+    internalQueryProhibitBlockingMergeOnMongoS: 0,\par
+    internalQueryMaxAddToSetBytes: 104857600,\par
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,\par
+    internalQueryFrameworkControl: 'forceClassicEngine'\par
+  \},\par
+  ok: 1\par
+\}\par
+db.movies.createIndex(\{title:1\})\par
+title_1\par
+db.movies.getIndexes()\par
+[\par
+  \{ v: 2, key: \{ _id: 1 \}, name: '_id_' \},\par
+  \{ v: 2, key: \{ title: 1 \}, name: 'title_1' \}\par
+]\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley\par
+\})\par
+SyntaxError: Unterminated string constant. (2:10)\par
+\par
+  1 | db.movies.find(\{\par
+> 2 |    title: 'Pirates of Silicon Valley\par
+    |           ^\par
+  3 | \})\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})\par
+\{\par
+  _id: 1,\par
+  title: 'Pirates of Silicon Valley',\par
+  year: 1999,\par
+  genre: 'Drama',\par
+  director: 'Martyn Burke'\par
+\}\par
+winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+      direction: 'forward'\par
+    \}\par
+SyntaxError: Missing semicolon. (3:12)\par
+\par
+  1 | winningPlan: \{\par
+  2 |       stage: 'COLLSCAN',\par
+> 3 |       filter: \{ title: \{ '$eq': 'Pirates of Silicon Valley' \} \},\par
+    |             ^\par
+  4 |       direction: 'forward'\par
+  5 |     \}\par
+db.movies.find(\{\par
+   title: 'Pirates of Silicon Valley'\par
+\})\par
+\{\par
+  _id: 1,\par
+  title: 'Pirates of Silicon Valley',\par
+  year: 1999,\par
+  genre: 'Drama',\par
+  director: 'Martyn Burke'\par
+\}\par
+\par
+db.locations.insertOne(\{\par
+\tab address: "Central San Jose, CA, USA",\par
+\tab lat: 37.335480,\par
+\tab long: -121.893028\par
+\})\par
+\{\par
+  explainVersion: '1',\par
+  queryPlanner: \{\par
+    namespace: 'Vitcampus.movies',\par
+    indexFilterSet: false,\par
+    parsedQuery: \{\par
+      year: \{\par
+        '$eq': 2014\par
+      \}\par
+    \},\par
+    queryHash: '108EB0D0',\par
+    planCacheKey: '5F26085F',\par
+    optimizationTimeMillis: 0,\par
+    maxIndexedOrSolutionsReached: false,\par
+    maxIndexedAndSolutionsReached: false,\par
+    maxScansToExplodeReached: false,\par
+    winningPlan: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        year: \{\par
+          '$eq': 2014\par
+        \}\par
+      \},\par
+      direction: 'forward'\par
+    \},\par
+    rejectedPlans: []\par
+  \},\par
+  executionStats: \{\par
+    executionSuccess: true,\par
+    nReturned: 2,\par
+    executionTimeMillis: 0,\par
+    totalKeysExamined: 0,\par
+    totalDocsExamined: 10,\par
+    executionStages: \{\par
+      stage: 'COLLSCAN',\par
+      filter: \{\par
+        year: \{\par
+          '$eq': 2014\par
+        \}\par
+      \},\par
+      nReturned: 2,\par
+      executionTimeMillisEstimate: 0,\par
+      works: 11,\par
+      advanced: 2,\par
+      needTime: 8,\par
+      needYield: 0,\par
+      saveState: 0,\par
+      restoreState: 0,\par
+      isEOF: 1,\par
+      direction: 'forward',\par
+      docsExamined: 10\par
+    \}\par
+  \},\par
+  command: \{\par
+    find: 'movies',\par
+    filter: \{\par
+      year: 2014\par
+    \},\par
+    '$db': 'Vitcampus'\par
+  \},\par
+  serverInfo: \{\par
+    host: 'DESKTOP-1MV4J90',\par
+    port: 27017,\par
+    version: '7.0.32',\par
+    gitVersion: '40a2e0f542b0a68f0ed51fa216e9d38b9917fe14'\par
+  \},\par
+  serverParameters: \{\par
+    internalQueryFacetBufferSizeBytes: 104857600,\par
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,\par
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,\par
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,\par
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,\par
+    internalQueryProhibitBlockingMergeOnMongoS: 0,\par
+    internalQueryMaxAddToSetBytes: 104857600,\par
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,\par
+    internalQueryFrameworkControl: 'forceClassicEngine'\par
+  \},\par
+  ok: 1\par
+\}\par
+db.movies.createIndex(\{year: 1\})\par
+year_1\par
+db.movies.getIndexes()\par
+[\par
+  \{ v: 2, key: \{ _id: 1 \}, name: '_id_' \},\par
+  \{ v: 2, key: \{ title: 1 \}, name: 'title_1' \},\par
+  \{ v: 2, key: \{ title: 1, year: 1 \}, name: 'title_1_year_1' \},\par
+  \{ v: 2, key: \{ year: 1 \}, name: 'year_1' \}\par
+]\par
+db.movies.dropIndex('year_1')\par
+\{ nIndexesWas: 4, ok: 1 \}\par
+db.movies.getIndexes()\par
+[\par
+  \{ v: 2, key: \{ _id: 1 \}, name: '_id_' \},\par
+  \{ v: 2, key: \{ title: 1 \}, name: 'title_1' \},\par
+  \{ v: 2, key: \{ title: 1, year: 1 \}, name: 'title_1_year_1' \}\par
+]\par
+db.movies.createIndex(\{runtime: -1\})\par
+runtime_-1\par
+db.movies.getIndexes()\par
+[\par
+  \{ v: 2, key: \{ _id: 1 \}, name: '_id_' \},\par
+  \{ v: 2, key: \{ title: 1 \}, name: 'title_1' \},\par
+  \{ v: 2, key: \{ title: 1, year: 1 \}, name: 'title_1_year_1' \},\par
+  \{ v: 2, key: \{ runtime: -1 \}, name: 'runtime_-1' \}\par
+]\par
+db.movies.dropIndex(\{runtime: -1\});\par
+\{ nIndexesWas: 4, ok: 1 \}\par
+db.movies.createIndex(\{year: 1\})\par
+db.movies.createIndex(\{runtime: 1\})\par
+runtime_1\par
+db.movies.getIndexes()\par
+[\par
+  \{ v: 2, key: \{ _id: 1 \}, name: '_id_' \},\par
+  \{ v: 2, key: \{ title: 1 \}, name: 'title_1' \},\par
+  \{ v: 2, key: \{ title: 1, year: 1 \}, name: 'title_1_year_1' \},\par
+  \{ v: 2, key: \{ year: 1 \}, name: 'year_1' \},\par
+  \{ v: 2, key: \{ runtime: 1 \}, name: 'runtime_1' \}\par
+]\par
+db.movies.dropIndexes()\par
+}
+ 
