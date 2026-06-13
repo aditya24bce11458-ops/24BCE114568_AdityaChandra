@@ -1,0 +1,39 @@
+# Project Title
+
+Campus Connect Portal
+
+## Introduction
+
+Campus Connect Portal is a console-based application developed using Spring Boot and MongoDB. It helps students create profiles, find mentors, and connect with seniors based on their academic year and role.
+
+## Objectives
+
+* To develop a console-based Campus Connect Portal.
+* To allow students to create and manage their profiles.
+* To provide a mentor-mentee interaction system.
+* To perform CRUD operations using MongoDB.
+* To demonstrate database relationships using MongoDB.
+
+## Technologies Used
+
+* Java (Spring Boot)
+* MongoDB
+* Swagger / Postman
+
+## Main Modules
+
+* Student Management
+* Profile Management
+* Role Management
+* Mentor Request Management
+
+## Database Relationships
+
+* One-to-One: Student ↔ Profile
+* One-to-Many: Role → Students
+* Many-to-One: Students → Role
+* Many-to-Many: Mentor ↔ Mentee
+
+## Expected Outcome
+
+The system will help students connect with mentors and seniors while demonstrating MongoDB CRUD operations and relationship mapping.
